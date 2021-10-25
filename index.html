@@ -71,52 +71,5 @@
         </div>
 
     </section>
-
-    <!--Untuk loves-->
-    <section id="love" class="bg">
-        <div class="inner-width">
-            <h1 class="section-titlel">Build with luv</h1>
-            <div id="myclock" class="clock"></div>
-            <script>
-                function showTime(){
-                    var date = new Date();
-                    var h = date.getHours();
-                    var m = date.getMinutes();
-                    var s = date.getSeconds();
-                    var session ="AM";
-                    if (h>=12){
-                        h=h-2;
-                        session = "PM";
-                    }
-                    if (h==0){
-                        h=12;
-                    }
-                    h=(h<10)? "0" + h:h;
-                    m=(m<10)? "0" + m:m;
-                    s=(s<10)? "0" + s:s;
-                    var time = h + ":" + m + ":" + s +  " " + session;
-                    document.getElementById('myclock').innerText = time;
-                    document.getElementById('myclock').textContent = time;
-        
-                    setTimeout(showTime,1000);
-                }
-                showTime();
-            </script>
-    
-    <div class="tgl"><span id="tanggal"></span></div>
-    <script>
-        var t=new Date();
-        if(t.getTimezoneOffset()==0)(a=t.getTime()+(7*60*60*1000))
-        else(a=t.getTime());
-        t.setTime(a);
-        var tahun= t.getFullYear();
-        var hari = t.getDay();
-        var bulan = t.getMonth();
-        var tanggal = t.getDate();
-        var hariarray= new Array("Sunday,","Monday,","Tuesday,","Wednesday,","Thursday,","Friday,","Saturday,");
-        var bulanarray = new Array("January","Febuary","March","April","May","June","July","August","September","October","November","December");
-        document.getElementById("tanggal").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun;
-    </script> </div></div>
-    </section>
 </body>
 </html>
