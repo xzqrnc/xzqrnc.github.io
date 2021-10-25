@@ -176,27 +176,3 @@ section.bg{
     padding-bottom: 55px;
 }
 
-.ab{
-    color: #fff;
-    box-sizing: border-box;
-    border: 3px;
-    text-align: center;
-    padding-bottom: 50px;
-    padding: 5px 400px;
-    display: inline-block
-    box-sizing: border-box;
-    border: 3px ;
-}
-
-button.bt{
-    display: inline-block;
-    margin: 5px 5px;
-    font-size: 16px;
-    font-weight: 500;
-    width: 70px;
-    border: 2px solid #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    background-color: rgb(69, 159, 243);
-    color: rgb(255, 255, 255);
-}
