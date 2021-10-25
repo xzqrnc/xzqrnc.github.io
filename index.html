@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aichaa💌</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Zen+Kurenaido&family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" href="aku.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="aku.js"></script>
+</head>
+<body>
+    <!--Untuk bagian navbar (paling atas)-->
+    <nav class="navbar">
+        <div class="inner-width">
+            <button class="menu-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+           <div class="navbar-menu">
+               <a href="#home">Home</a>
+               <a href="#about">About</a>
+               <a href="#love">Love</a>
+               <a href="#">Contact</a>
+           </div>
+        </div>
+    </nav>
+
+    <!--Untuk sesi home-->
+    <section id="home">
+        <div class="inner-width">
+            <div class="content">
+                <h1>Hello I'm</h1>
+                <div class="sm">
+                  <a href="https://www.facebook.com/kepoyakamuuuhhhh" class="fab fa-facebook-f"></a>
+                  <a href="https://wa.me/6285799580946" class="fab fa-whatsapp"></a>
+                  <a href="https://www.instagram.com/xzqrnc/" class="fab fa-instagram"></a>
+                  <a href="https://www.youtube.com/channel/UCdxeDuS-IYuGvAP-7psBKmg" class="fab fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!--untuk navbar about-->
+    <section id="about">
+        <div class="inner-width">
+           <strong> <h1 class="section-title">About Me</h1> </strong>
+            <div class="about-content">
+               <div class="about-text">
+                   <h2>Hello! I'm Aichaa</h2>
+                   <h3>
+                       <span>I</span>
+                       <span>Still</span>
+                       <span>Have</span>
+                       <span>A</span>
+                       <span>Dreams</span> </h3>
+                       <p>Hello👋🏻 My name is Icha, you can call me Icha, nice to meet you.</p>
+                       <p>I am Indonesian, I was born in October 2003</p>
+                       <p>When creating this website honestly I just idly sorry if this website is not neat.</p>
+                       <p>Maybe if you guys could teach me to learn more. I'd be happy with that.</p>
+                       <p>Don't hesitate to contact me:)</p>
+                       <p>Thank you!</p>
+                    </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Untuk loves-->
+    <section id="love" class="bg">
+        <div class="inner-width">
+            <h1 class="section-titlel">Build with luv</h1>
+            <div id="myclock" class="clock"></div>
+            <script>
+                function showTime(){
+                    var date = new Date();
+                    var h = date.getHours();
+                    var m = date.getMinutes();
+                    var s = date.getSeconds();
+                    var session ="AM";
+                    if (h>=12){
+                        h=h-2;
+                        session = "PM";
+                    }
+                    if (h==0){
+                        h=12;
+                    }
+                    h=(h<10)? "0" + h:h;
+                    m=(m<10)? "0" + m:m;
+                    s=(s<10)? "0" + s:s;
+                    var time = h + ":" + m + ":" + s +  " " + session;
+                    document.getElementById('myclock').innerText = time;
+                    document.getElementById('myclock').textContent = time;
+        
+                    setTimeout(showTime,1000);
+                }
+                showTime();
+            </script>
+    
+    <div class="tgl"><span id="tanggal"></span></div>
+    <script>
+        var t=new Date();
+        if(t.getTimezoneOffset()==0)(a=t.getTime()+(7*60*60*1000))
+        else(a=t.getTime());
+        t.setTime(a);
+        var tahun= t.getFullYear();
+        var hari = t.getDay();
+        var bulan = t.getMonth();
+        var tanggal = t.getDate();
+        var hariarray= new Array("Minggu,","Senin,","Selasa,","Rabu,","Kamis,","Jum'at,","Sabtu,");
+        var bulanarray = new Array("Januari","Febuary","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+        document.getElementById("tanggal").innerHTML = hariarray[hari]+" "+tanggal+" "+bulanarray[bulan]+" "+tahun;
+    </script> </div></div>
+
+    <div class="ab" >
+        <h2>Hey Baby!!</h2>
+        <h3>I dont care the number you say, 18 19 or 30 i dont care, cause it's just a number. I only care about how you feel for me.. Now i want to ask you, will you be my life?</h3><br><br><br>
+        <a href="https://wa.me/6285799580946?text=Hay!+icha+cantiknya+aku,+mau+jadi+pacarmu❤"><button id='btn_mau' class="bt" onclick='alert("Hore!, Resmi jadian nii:>")'>Yes</button></a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button id='btn_gamau' class="bt" onclick='gamau(this)'style='position: absolute;'>No</button>
+        <script>
+            function gamau(id){
+                var mau = document.getElementById('btn_mau');
+                var i = Math.floor(Math.random()*100)+2;
+                var j = Math.floor(Math.random()*100)+mau.offsetTop;
+                id.style.left = i+'px';
+                id.style.top = j+'px';
+            }
+        </script>
+
+    </section>
+</body>
+</html>
