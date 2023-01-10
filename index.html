@@ -1,85 +1,89 @@
 <!DOCTYPE html>
+
 <html lang="in">
+
 <head>
+
     <meta charset="UTF-8">
+
     <title>Icha📬</title>
+
 </head>
+
 <body>
-    
-    <!-- background ygy fixed cover kih -->
-        
-    <style>
-    body{
-    background-image: url("bg.jpg");
-    background-repeat: no-repeat center-fixed;
-    -webkit-background-size: cover;
-    }
-    </style>    
-    
-    
-    <!-- aks bingung mau ngapain -->
-    
-     <script src= "sweetalert2.all.min.js"></script>
-     
-     <script>
-         const nama = Swal.fire ({
-         title : 'Apa lu? Gosah soasik',
-         imageUrl: 'nya.jpg', 
-         imageWidth: 300,
-         imageHeight: 330, 
-         confirmButtonText: 'WLEE'})
-      </script>
-     
+
     
 
-    </body>
-</html>
-<!DOCTYPE html>
-<html lang="in">
-<head>
-    <meta charset="UTF-8">
-    <title>Icha📬</title>
-</head>
-<body>
-    
     <!-- background ygy fixed cover kih -->
+
         
+
     <style>
+
     body{
+
     background-image: url("bg.jpg");
+
     background-repeat: no-repeat center-fixed;
+
     -webkit-background-size: cover;
+
     }
+
     </style>    
+
     
+
     
+
     <!-- aks bingung mau ngapain -->
+
     
+
      <script src= "sweetalert2.all.min.js"></script>
+
      
+
      <script>
+
          const printingData = function (data={}) {
+
     Swal.fire({title: Halo ${data.value}!});
+
 };
 
 const checkingData = function (data) {
+
     if (data.value.length == 0) {
+
         Swal.fire({icon: 'warning', title: 'Nama tidak boleh kosong!'}).then(data_2 => {
+
             if (data_2.isConfirmed) makeQuestion();
+
         });
+
     } else {
+
         printingData(data);
+
     }
+
 };
 
 const makeQuestion = async function () {
+
     Swal.fire({title: 'Masukkan nama', input: 'text', confirmButtonText: 'OK'}).then(checkingData)
+
 };
 
 makeQuestion()
+
       </script>
+
      
+
     
 
     </body>
+
 </html>
