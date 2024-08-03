@@ -46,37 +46,60 @@
 
      <script>
 
-         const printingData = function (data={}) {
-
-    Swal.fire({title: `Halo ${data.value}!`});
-
-};
-
-const checkingData = function (data) {
-
-    if (data.value.length == 0) {
-
-        Swal.fire({icon: 'warning', title: 'Nama tidak boleh kosong!'}).then(data_2 => {
-
-            if (data_2.isConfirmed) makeQuestion();
-
+         async function startInteraction() {
+        const { value: name } = await Swal.fire({
+            title : 'Kenalan Yok', 
+           input: 'text',
+            inputLabel: 'Masukkan nama kamu',
+            inputPlaceholder: 'Contoh: Icha',
+            inputValidator: (value) => {
+                if (!value) {
+                    return 'Nama tidak boleh kosong!'
+                }
+            }
         });
 
-    } else {
-
-        printingData(data);
-
+        if (name) {
+            let confirmed = false;
+            while (!confirmed) {
+                await Swal.fire({
+                    title: `Halo ${name} ✌🏻`,
+                    text: 'Kamu mau jadi tmnku gak?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Gk',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        confirmed = true;
+        
+                        Swal.fire({
+                            title: 'Yeay!!',
+                            text: `Ayo ke Wea`,
+                            icon: 'success',
+                            showCancelButton: false,
+                            confirmButtonText: 'OK',
+                        }).then(() => {
+                            redirectToWhatsApp();
+                        });
+                    }
+                });
+            }
+        }
     }
 
-};
+    function redirectToWhatsApp() {
+      
+        const waNumber = '6285799580946';
+        const message = encodeURIComponent('Hay! Animek, aku mau Temenan ');
+        window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+    }
 
-const makeQuestion = async function () {
-
-    Swal.fire({title: 'Masukkan nama', input: 'text', confirmButtonText: 'OK'}).then(checkingData)
-
-};
-
-makeQuestion()
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        startInteraction();
+    });
 
       </script>
 
