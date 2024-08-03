@@ -22,23 +22,6 @@
 </head>
 <body>
 
-    
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-image: url('https://i.pinimg.com/736x/d0/d8/c0/d0d8c02e9b5cc2db12532d4927268a43.jpg');
-            background-size: cover;
-        }
-    </style>
-</head>
-<body>
-
 <script>
     async function startInteraction() {
         const { value: name } = await Swal.fire({
@@ -59,7 +42,7 @@
             
             if (name.toLowerCase() === 'hasena','sena') {
                 questionText = 'Maukah kamu menjadi suamiku?';
-            } else if (name.toLowerCase() === 'arya', 'farya') {
+            } else if (name.toLowerCase() === 'arya') {
                 questionText = 'Hay nak! maukah kamu jadi anakku untuk sekarang dan selamanya?';
             }
 
