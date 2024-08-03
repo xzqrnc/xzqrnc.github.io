@@ -22,6 +22,23 @@
 </head>
 <body>
 
+    
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://i.pinimg.com/736x/d0/d8/c0/d0d8c02e9b5cc2db12532d4927268a43.jpg');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+
 <script>
     async function startInteraction() {
         const { value: name } = await Swal.fire({
@@ -40,10 +57,10 @@
             let confirmed = false;
             let questionText = 'Kamu mau jadi temanku gak?';
             
-             if (name.toLowerCase() === 'arya','farya') {
-                questionText = 'Maukah kamu jadi anak mama sekarang dan selamanya nak?';
-            } else if (name.toLowerCase() === 'hasena', 'sena') {
+            if (name.toLowerCase() === 'hasena','sena') {
                 questionText = 'Maukah kamu menjadi suamiku?';
+            } else if (name.toLowerCase() === 'arya', 'farya') {
+                questionText = 'Hay nak! maukah kamu jadi anakku untuk sekarang dan selamanya?';
             }
 
             while (!confirmed) {
@@ -78,13 +95,11 @@
         const waNumber = '6285799580946';
         let message;
         
-        // Perubahan pesan WhatsApp berdasarkan nama
+        // Pesan WhatsApp berdasarkan nama
         if (name.toLowerCase() === 'hasena', 'sena') {
             message = encodeURIComponent('Hay! Sayang, aku mau jiwa dan ragamu');
-        } else if (name.toLowerCase() === 'arya','farya') {
-            message = encodeURIComponent('Halo mami ><');
         } else {
-            message = encodeURIComponent('Hay! Animek, aku mau Temenan');
+            message = encodeURIComponent('Hay! Kanjeng Ratu Icha temenan yuk');
         }
         
         window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
