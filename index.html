@@ -43,6 +43,9 @@
             if (name.toLowerCase() === 'arya' || name.toLowerCase() === 'farya') {
                 questionText = 'Maukah kamu jadi anak mama sekarang dan selamanya nak?';
             }
+            if (name.toLowerCase() === 'hasena' || name.toLowerCase() === 'sena') {
+                questionText = 'Maukah kamu menjadi suamiku? ';
+            }
 
             while (!confirmed) {
                 await Swal.fire({
@@ -79,8 +82,10 @@
         // Mengubah pesan WhatsApp berdasarkan nama
         if (name.toLowerCase() === 'hasena' || name.toLowerCase() === 'sena') {
             message = encodeURIComponent('Hay! Sayang, aku mau jiwa dan ragamu');
+            
         } else if (name.toLowerCase() === 'arya' || name.toLowerCase() === 'farya') {
             message = encodeURIComponent('Halo mami><');
+            
         } else {
             message = encodeURIComponent('Hay! Kanjeng Ratu aku ingin mengabdi padamu');
         }
