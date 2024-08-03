@@ -9,6 +9,8 @@
     <title>Icha📬</title>
 
 </head>
+    <link href="https://fonts.googleapis.com/css2?family=Font+Name&display=swap" rel="stylesheet">
+
 
 <body>
 
@@ -36,7 +38,7 @@
 
     
 
-    <!-- aks bingung mau ngapain -->
+    <!-- WELL -->
 
     
 
@@ -48,7 +50,7 @@
 
          async function startInteraction() {
         const { value: name } = await Swal.fire({
-            title : 'Kenalan Yok', 
+            title : 'Hai Kenalan Dulu Yukk', 
            input: 'text',
             inputLabel: 'Masukkan nama kamu',
             inputPlaceholder: 'Contoh: Icha',
@@ -64,19 +66,19 @@
             while (!confirmed) {
                 await Swal.fire({
                     title: `Halo ${name} ✌🏻`,
-                    text: 'Kamu mau jadi tmnku gak?',
+                    text: 'Jadi gini kamu mau jadi temenki gak?',
                     icon: 'question',
                     showCancelButton: true,
-                    confirmButtonText: 'Ya',
-                    cancelButtonText: 'Gk',
+                    confirmButtonText: 'Iya',
+                    cancelButtonText: 'Gak',
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
                         confirmed = true;
         
                         Swal.fire({
-                            title: 'Yeay!!',
-                            text: `Ayo ke Wea`,
+                            title: 'Yeay!! Makasih',
+                            text: `Ayo Hubungi Aku ke WA`,
                             icon: 'success',
                             showCancelButton: false,
                             confirmButtonText: 'OK',
@@ -92,7 +94,7 @@
     function redirectToWhatsApp() {
       
         const waNumber = '6285799580946';
-        const message = encodeURIComponent('Hay! Animek, aku mau Temenan ');
+        const message = encodeURIComponent('Hay! Kanjeng Ratu Icha, aku mau temenan sama kamu dong ');
         window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
     }
 
