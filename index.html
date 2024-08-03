@@ -52,7 +52,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         confirmed = true;
-
+        
                         Swal.fire({
                             title: 'Yeay!!',
                             text: `Ayo ke Wea`,
@@ -60,7 +60,7 @@
                             showCancelButton: false,
                             confirmButtonText: 'OK',
                         }).then(() => {
-                            redirectToWhatsApp();
+                            redirectToWhatsApp(name);
                         });
                     }
                 });
@@ -68,10 +68,16 @@
         }
     }
 
-    function redirectToWhatsApp() {
-      
+    function redirectToWhatsApp(name) {
         const waNumber = '6285799580946';
-        const message = encodeURIComponent('Hay! Kanjeng Ratu Icha, Aku mau mengabdi padamu ');
+        let message;
+        
+        if (name.toLowerCase() === 'hasena') {
+            message = encodeURIComponent('Hay! Sayang, aku mau jiwa dan ragamu');
+        } else {
+            message = encodeURIComponent('Hay! Kanjeng Ratu aku ingin mengabdi padamu');
+        }
+        
         window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
     }
 
