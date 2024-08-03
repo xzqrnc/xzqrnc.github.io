@@ -39,11 +39,8 @@
         if (name) {
             let confirmed = false;
             let questionText = 'Kamu mau jadi temanku gak?';
-            
-            if (name.toLowerCase() === 'hasena','sena') {
+            if (name.toLowerCase() === 'hasena') {
                 questionText = 'Maukah kamu menjadi suamiku?';
-            } else if (name.toLowerCase() === 'arya') {
-                questionText = 'Hay nak! maukah kamu jadi anakku untuk sekarang dan selamanya?';
             }
 
             while (!confirmed) {
@@ -78,11 +75,10 @@
         const waNumber = '6285799580946';
         let message;
         
-        // Pesan WhatsApp berdasarkan nama
-        if (name.toLowerCase() === 'hasena', 'sena') {
+        if (name.toLowerCase() === 'hasena') {
             message = encodeURIComponent('Hay! Sayang, aku mau jiwa dan ragamu');
         } else {
-            message = encodeURIComponent('Hay! Kanjeng Ratu Icha temenan yuk');
+            message = encodeURIComponent('Hay! Animek, aku mau Temenan');
         }
         
         window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
