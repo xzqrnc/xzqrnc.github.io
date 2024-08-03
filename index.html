@@ -1,30 +1,30 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Ichantik📬</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 
- 
- <!--fix background bisa cover kih-->
     <style>
-    
-     body{
-    background-image: url("bg.jpg");
-
-    background-repeat: no-repeat center-fixed;
-
-    -webkit-background-size: cover;
-    }
-     
-    </style>    
-    
+        body {
+            background-image: url("bg.jpg");
+            background-repeat: no-repeat center fixed;
+            background-size: cover;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
 </head>
 <body>
 
 <script>
     async function startInteraction() {
         const { value: name } = await Swal.fire({
-            title : 'Kenalan Yuk', 
+            title: 'Kenalan Yuk',
             input: 'text',
             inputLabel: 'Masukkan nama kamu',
             inputPlaceholder: 'Contoh: Icha',
@@ -39,8 +39,110 @@
             let confirmed = false;
             let questionText = 'Kamu mau jadi temanku gak?';
             
-         //hehe iseng🚀
-        if (name.toLowerCase() === 'hasena','sena') {
+            // Mengubah pertanyaan jika nama adalah 'Arya' atau 'Farya'
+            if (name.toLowerCase() === 'arya' || name.toLowerCase() === 'farya') {
+                questionText = 'Maukah kamu jadi anak mama sekarang dan selamanya nak?';
+            }
+
+            while (!confirmed) {
+                await Swal.fire({
+                    title: `Halo ${name} ✌🏻`,
+                    text: questionText,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya',
+                    cancelButtonText: 'Gak',
+                    reverseButtons: true
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        confirmed = true;
+        
+                        Swal.fire({
+                            title: 'Yeay!!',
+                            text: `Ayo Hubungi Aku Di WEA`,
+                            icon: 'success',
+                            showCancelButton: false,
+                            confirmButtonText: 'OK',
+                        }).then(() => {
+                            redirectToWhatsApp(name);
+                        });
+                    }
+                });
+            }
+        }
+    }
+
+    function redirectToWhatsApp(name) {
+        const waNumber = '6285799580946';
+        let message;
+        
+        // Mengubah pesan WhatsApp berdasarkan nama
+        if (name.toLowerCase() === 'hasena' || name.toLowerCase() === 'sena') {
+            message = encodeURIComponent('Hay! Sayang, aku mau jiwa dan ragamu');
+        } else if (name.toLowerCase() === 'arya' || name.toLowerCase() === 'farya') {
+            message = encodeURIComponent('Halo mami><');
+        } else {
+            message = encodeURIComponent('Hay! Kanjeng Ratu aku ingin mengabdi padamu');
+        }
+        
+        window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        startInteraction();
+    });
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ichantik📬</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+    <style>
+        body {
+            background-image: url("bg.jpg");
+            background-repeat: no-repeat center fixed;
+            background-size: cover;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    async function startInteraction() {
+        const { value: name } = await Swal.fire({
+            title: 'Kenalan Yuk',
+            input: 'text',
+            inputLabel: 'Masukkan nama kamu',
+            inputPlaceholder: 'Contoh: Icha',
+            inputValidator: (value) => {
+                if (!value) {
+                    return 'Nama tidak boleh kosong!'
+                }
+            }
+        });
+
+        if (name) {
+            let confirmed = false;
+            let questionText = 'Kamu mau jadi temanku gak?';
+            
+            // Mengubah pertanyaan jika nama adalah 'Arya' atau 'Farya'
+            if (name.toLowerCase() === 'arya' || name.toLowerCase() === 'farya') {
+                questionText = 'Maukah kamu jadi anak mama sekarang dan selamanya nak?';
+            }
+           
+            
+            if (name.toLowerCase() === 'hasena'|| name.toLowerCase() === 'farya') {
                 questionText = 'Maukah kamu menjadi suamiku?';
             }
 
@@ -76,8 +178,11 @@
         const waNumber = '6285799580946';
         let message;
         
-        if (name.toLowerCase() === 'hasena','sena') {
+        // Mengubah pesan WhatsApp berdasarkan nama
+        if (name.toLowerCase() === 'hasena' || name.toLowerCase() === 'sena') {
             message = encodeURIComponent('Hay! Sayang, aku mau jiwa dan ragamu');
+        } else if (name.toLowerCase() === 'arya' || name.toLowerCase() === 'farya') {
+            message = encodeURIComponent('Halo mami><');
         } else {
             message = encodeURIComponent('Hay! Kanjeng Ratu aku ingin mengabdi padamu');
         }
@@ -85,7 +190,6 @@
         window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
     }
 
-    
     document.addEventListener('DOMContentLoaded', () => {
         startInteraction();
     });
