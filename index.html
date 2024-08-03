@@ -40,8 +40,7 @@
             let confirmed = false;
             let questionText = 'Kamu mau jadi temanku gak?';
             
-            // Perubahan pertanyaan jika nama adalah 'Arya' atau 'Farya'
-            if (name.toLowerCase() === 'arya','farya') {
+             if (name.toLowerCase() === 'arya','farya') {
                 questionText = 'Maukah kamu jadi anak mama sekarang dan selamanya nak?';
             } else if (name.toLowerCase() === 'hasena', 'sena') {
                 questionText = 'Maukah kamu menjadi suamiku?';
@@ -80,9 +79,9 @@
         let message;
         
         // Perubahan pesan WhatsApp berdasarkan nama
-        if (name.toLowerCase() === 'hasena') {
+        if (name.toLowerCase() === 'hasena', 'sena') {
             message = encodeURIComponent('Hay! Sayang, aku mau jiwa dan ragamu');
-        } else if (name.toLowerCase() === 'arya' || name.toLowerCase() === 'farya') {
+        } else if (name.toLowerCase() === 'arya','farya') {
             message = encodeURIComponent('Halo mami ><');
         } else {
             message = encodeURIComponent('Hay! Animek, aku mau Temenan');
