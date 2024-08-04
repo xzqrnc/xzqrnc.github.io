@@ -22,10 +22,26 @@
 </head>
 <body>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
 <script>
     async function startInteraction() {
         const { value: name } = await Swal.fire({
-            title : 'Kenalan Yuk', 
+            title: 'Kenalan dulu Yukk!!',
             input: 'text',
             inputLabel: 'Masukkan nama kamu',
             inputPlaceholder: 'Contoh: Icha',
@@ -37,33 +53,43 @@
         });
 
         if (name) {
-            let confirmed = false;
-            let questionText = 'Kamu mau jadi temanku gak?';
-            if (name.toLowerCase() === 'hasena') {
-                questionText = 'Maukah kamu menjadi suamiku?';
+            let loveQuestion = "Kamu mau jadi temenku gak?";
+            let whatsappMessage = "Hay! Aku, aku mau jadi temen kamu!!";
+
+            // Check nama "sena" or "hasena"
+            if (name.toLowerCase() === "sena" || name.toLowerCase() === "hasena") {
+                loveQuestion = "Maukah kamu jadi suamiku, Sayang?";
+                whatsappMessage = "Sayang, aku mau jiwa dan ragamu";
+            }
+            // Cek nama "arya" or "farya"
+            else if (name.toLowerCase() === "arya" || name.toLowerCase() === "farya") {
+                loveQuestion = "Maukah kamu jadi anakku untuk sekarang dan selamanya?";
+                whatsappMessage = "Halo mami><";
             }
 
+    
+            let confirmed = false;
             while (!confirmed) {
                 await Swal.fire({
                     title: `Halo ${name} ✌🏻`,
-                    text: questionText,
+                    text: loveQuestion,
                     icon: 'question',
                     showCancelButton: true,
                     confirmButtonText: 'Ya',
-                    cancelButtonText: 'Gak',
+                    cancelButtonText: 'Gk dl',
                     reverseButtons: true
                 }).then((result) => {
                     if (result.isConfirmed) {
                         confirmed = true;
-        
+                        // popup wangsaf
                         Swal.fire({
-                            title: 'Yeay!!',
-                            text: `Ayo ke Wea`,
+                            title: 'Yeay! Terima kasih',
+                            text: `Klik Ok dan hubungi aku via WhatsApp!!.`,
                             icon: 'success',
                             showCancelButton: false,
                             confirmButtonText: 'OK',
                         }).then(() => {
-                            redirectToWhatsApp(name);
+                            redirectToWhatsApp(whatsappMessage);
                         });
                     }
                 });
@@ -71,17 +97,11 @@
         }
     }
 
-    function redirectToWhatsApp(name) {
+    function redirectToWhatsApp(message) {
+        // ganti nomer wangsaf disini
         const waNumber = '6285799580946';
-        let message;
-        
-        if (name.toLowerCase() === 'hasena') {
-            message = encodeURIComponent('Hay! Sayang, aku mau jiwa dan ragamu');
-        } else {
-            message = encodeURIComponent('Hay! Animek, aku mau Temenan');
-        }
-        
-        window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+        const encodedMessage = encodeURIComponent(message);
+        window.open(`https://wa.me/${waNumber}?text=${encodedMessage}`, '_blank');
     }
 
     
@@ -92,3 +112,4 @@
 
 </body>
 </html>
+
